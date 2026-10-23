@@ -1,16 +1,35 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MaterialApp( home: Home(),
+  ),
+  );
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Calculadora de IMC'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 5, 136, 243),
+        actions: <Widget>[
+          IconButton(onPressed: () {},
+          icon: Icon(Icons.refresh),
+          ),
+
+        ],
+      ),
     );
   }
 }
+
+
